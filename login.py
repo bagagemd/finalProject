@@ -4,14 +4,13 @@ import sqlite3
 import SessionState
 import streamlit as st
 from multiapp import MultiApp
-from apps import CryptoPredict, StockPredict
+from apps import page
 
 #loggedIn = False
 
 
 app = MultiApp()
-app.add_app("Crypto", CryptoPredict.app)
-app.add_app("Stocks", StockPredict.app)
+app.add_app("Crypto & Stocks", page.app)
 
 conn = sqlite3.connect('logins.db')
 c = conn.cursor()
